@@ -1,0 +1,39 @@
+{
+  "docentes": [
+    {
+      "id": 1,
+      "nome": "João da Silvaa",
+      "matricula": 1234,
+      "nascimento": "Wed May 25 2022 00:00:00 GMT-0300 (Horário Padrão de Brasília)",
+      "departamento": "pesquisa"
+    },
+    {
+      "id": 2,
+      "nome": "Mariana Pires3",
+      "matricula": 1543,
+      "nascimento": "Wed May 25 2022 00:00:00 GMT-0300 (Horário Padrão de Brasília)",
+      "departamento": "execução"
+    },
+    {
+      "id": 3,
+      "nome": "teste",
+      "matricula": "123",
+      "nascimento": "Thu May 12 2022 00:00:00 GMT-0300 (Horário Padrão de Brasília)",
+      "departamento": "asdfasdfasd"
+    },
+    {
+      "id": 4,
+      "nome": "ertert",
+      "matricula": "1dfqwer",
+      "nascimento": "Fri May 27 2022 00:00:00 GMT-0300 (Horário Padrão de Brasília)",
+      "departamento": "qwerwqerqw"
+    }
+  ],
+  "users": [
+    {
+      "email": "admin@email.com",
+      "password": "$2a$10$JDpnyyEfMlX94Fchr31lhOYMUH8NSEYVppIRRpnInYOQtm.kVwL.C",
+      "id": 1
+    }
+  ]
+}

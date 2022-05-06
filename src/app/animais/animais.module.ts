@@ -4,13 +4,9 @@ import { CommonModule } from '@angular/common';
 import { AnimaisRoutingModule } from './animais-routing.module';
 
 @NgModule({
-  declarations: [],
   imports: [
     CommonModule,
     AnimaisRoutingModule
-  ],
-  exports: [
-
   ]
 })
 export class AnimaisModule { }
