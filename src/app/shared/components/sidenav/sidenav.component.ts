@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { MenuItemModel } from '../../models/menu-item';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sidenav',
@@ -15,10 +16,15 @@ export class SidenavComponent implements OnInit {
       name: 'Docentes',
       path: '/docentes',
       icon: 'person'
+    },
+    {
+      name: 'Discentes',
+      path: '/discentes',
+      icon: 'person'
     }
   ]
 
-  constructor() { }
+  constructor(public router: Router) { }
 
   ngOnInit(): void {
   }

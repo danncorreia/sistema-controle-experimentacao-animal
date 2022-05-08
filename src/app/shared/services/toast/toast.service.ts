@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
+import { MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition, MatSnackBar } from '@angular/material/snack-bar';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ResquestResponseService {
+export class ToastService {
 
   horizontalPosition: MatSnackBarHorizontalPosition = 'center';
   verticalPosition: MatSnackBarVerticalPosition = 'top';
@@ -16,17 +16,5 @@ export class ResquestResponseService {
       horizontalPosition: this.horizontalPosition,
       verticalPosition: this.verticalPosition,
     });
-  }
-
-  validateCatchError(message: string, e: any){
-    if(e.status === 401) {
-      window.localStorage.removeItem('user');
-    }else if(e.status === 403) {
-      this.openSnackBar('Usuário não autorizado');
-    }else{
-      this.openSnackBar(message);
-    }
-
-    return Promise.reject(e);
   }
 }

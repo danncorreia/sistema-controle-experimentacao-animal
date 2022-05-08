@@ -1,9 +1,9 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ListDiscentesComponent } from './components/list-discentes/list-discentes.component';
+import { DiscentesViewComponent } from './components/discentes-view/discentes-view.component';
 
 const routes: Routes = [
-  {path: "", component: ListDiscentesComponent}
+  {path: "", component: DiscentesViewComponent}
 ];
 
 @NgModule({

@@ -7,11 +7,11 @@ import { DocenteDialogComponent } from '../docente-dialog/docente-dialog.compone
 import { MatDialog } from '@angular/material/dialog';
 
 @Component({
-  selector: 'app-list-docentes',
-  templateUrl: './list-docentes.component.html',
-  styleUrls: ['./list-docentes.component.scss']
+  selector: 'app-docentes-view',
+  templateUrl: './docentes-view.component.html',
+  styleUrls: ['./docentes-view.component.scss']
 })
-export class ListDocentesComponent implements OnInit {
+export class DocentesViewComponent implements OnInit {
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
@@ -58,4 +58,5 @@ export class ListDocentesComponent implements OnInit {
       this.getDocentes();
     });
   }
+
 }

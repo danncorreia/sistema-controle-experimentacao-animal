@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ListDiscentesComponent } from './list-discentes.component';
+import { DiscentesViewComponent } from './discentes-view.component';
 
-describe('ListDiscentesComponent', () => {
-  let component: ListDiscentesComponent;
-  let fixture: ComponentFixture<ListDiscentesComponent>;
+describe('DiscentesViewComponent', () => {
+  let component: DiscentesViewComponent;
+  let fixture: ComponentFixture<DiscentesViewComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ListDiscentesComponent ]
+      declarations: [ DiscentesViewComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ListDiscentesComponent);
+    fixture = TestBed.createComponent(DiscentesViewComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

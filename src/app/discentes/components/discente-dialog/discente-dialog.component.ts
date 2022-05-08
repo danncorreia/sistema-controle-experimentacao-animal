@@ -1,24 +1,24 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { DocenteModel } from '../../models/docente';
-import { DocentesService } from '../../services/docentes.service';
-import { DocentesController } from '../../controllers/docentes.controller';
+import { DiscenteModel } from '../../models/discente';
+import { DiscentesController } from '../../controllers/discentes.controller';
 import { ToastService } from '../../../shared/services/toast/toast.service';
 
 @Component({
-  selector: 'app-docente-dialog',
-  templateUrl: './docente-dialog.component.html',
-  styleUrls: ['./docente-dialog.component.scss']
+  selector: 'app-discente-dialog',
+  templateUrl: './discente-dialog.component.html',
+  styleUrls: ['./discente-dialog.component.scss']
 })
-export class DocenteDialogComponent implements OnInit {
+export class DiscenteDialogComponent implements OnInit {
+
 
   form: FormGroup;
 
   constructor(
-    public dialogRef: MatDialogRef<DocenteDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: DocenteModel,
-    private controller: DocentesController,
+    public dialogRef: MatDialogRef<DiscenteDialogComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: DiscenteModel,
+    private controller: DiscentesController,
     private toastService: ToastService
   ) {}
 
@@ -28,7 +28,7 @@ export class DocenteDialogComponent implements OnInit {
       nome: new FormControl(this.data.nome, [Validators.required]),
       matricula: new FormControl(this.data.matricula, [Validators.required]),
       nascimento: new FormControl(new Date(this.data.nascimento), [Validators.required, this.dataMenorQueAtual]),
-      departamento: new FormControl(this.data.departamento, [Validators.required])
+      curso: new FormControl(this.data.curso, [Validators.required])
     });
   }
 
@@ -39,7 +39,6 @@ export class DocenteDialogComponent implements OnInit {
   cadastrar(){
     if(this.form.invalid){
       this.toastService.openSnackBar('Preencha todos os campos corretamente')
-      this.form.markAsTouched();
     }else{
       let docente = this.form.value;
       docente.nascimento = docente.nascimento.toString();
@@ -53,7 +52,6 @@ export class DocenteDialogComponent implements OnInit {
   atualizar(){
     if(this.form.invalid){
       this.toastService.openSnackBar('Preencha todos os campos corretamente')
-      this.form.markAsTouched();
     }else{
       let docente = this.form.value;
       docente.nascimento = docente.nascimento.toString();
@@ -70,4 +68,5 @@ export class DocenteDialogComponent implements OnInit {
       return {error:'data maior que atual'}
     }
   }
+
 }

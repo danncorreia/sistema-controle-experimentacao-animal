@@ -1,5 +1,5 @@
-<h1 mat-dialog-title *ngIf="!data.id">Cadastrar Docente</h1>
-<h1 mat-dialog-title *ngIf="data.id">Alterar Docente</h1>
+<h1 mat-dialog-title *ngIf="!data.id">Cadastrar Discente</h1>
+<h1 mat-dialog-title *ngIf="data.id">Alterar Discente</h1>
 
 <div mat-dialog-content class="body" [formGroup]="form">
   <mat-form-field appearance="fill">
@@ -8,7 +8,7 @@
   </mat-form-field>
   <mat-form-field appearance="fill">
     <mat-label>Matricula</mat-label>
-    <input formControlName="matricula" matInput type="number" (readonly)="data.id">
+    <input formControlName="matricula" matInput>
   </mat-form-field>
   <mat-form-field appearance="fill">
     <mat-label>Nascimento</mat-label>
@@ -17,8 +17,8 @@
     <mat-datepicker #picker></mat-datepicker>
   </mat-form-field>
   <mat-form-field appearance="fill">
-    <mat-label>Departamento</mat-label>
-    <input formControlName="departamento" matInput>
+    <mat-label>Curso</mat-label>
+    <input formControlName="curso" matInput>
   </mat-form-field>
 </div>
 <div mat-dialog-actions>

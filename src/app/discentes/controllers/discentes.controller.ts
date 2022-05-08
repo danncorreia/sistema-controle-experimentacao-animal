@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { DocenteModel } from '../models/docente';
-import { DocentesService } from '../services/docentes.service';
+import { DiscenteModel } from '../models/discente';
+import { DiscentesService } from '../services/discentes.service';
 import { LoadingService } from '../../shared/services/loading/loading.service';
 import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
 import { ResquestResponseService } from '../../shared/services/request/resquest-response.service';
@@ -10,19 +10,19 @@ import { ToastService } from '../../shared/services/toast/toast.service';
 @Injectable({
   providedIn: 'root'
 })
-export class DocentesController {
+export class DiscentesController {
 
   horizontalPosition: MatSnackBarHorizontalPosition = 'center';
   verticalPosition: MatSnackBarVerticalPosition = 'top';
 
-  constructor(private docentesService: DocentesService, private loadingService:LoadingService, private requestResponseService: ResquestResponseService, private toastService: ToastService) {}
+  constructor(private discentesService: DiscentesService, private loadingService:LoadingService, private requestResponseService: ResquestResponseService, private toastService: ToastService) {}
 
-  get(): Promise<DocenteModel[]> {
+  get(): Promise<DiscenteModel[]> {
     try {
       this.loadingService.showLoading();
 
-      return this.docentesService.get()
-      .catch((e) => this.requestResponseService.validateCatchError('Erro ao buscar docentes', e))
+      return this.discentesService.get()
+      .catch((e) => this.requestResponseService.validateCatchError('Erro ao buscar discentes', e))
       .finally(() => {
         this.loadingService.hideLoading();
       });
@@ -36,7 +36,7 @@ export class DocentesController {
     try {
       this.loadingService.showLoading();
 
-      return this.docentesService.del(id).then((resp) => {
+      return this.discentesService.del(id).then((resp) => {
         this.toastService.openSnackBar('Docente eliminado correctamente');
       })
       .catch((e) => this.requestResponseService.validateCatchError('Erro ao eliminar docente', e))
@@ -49,11 +49,11 @@ export class DocentesController {
     }
   }
 
-  create(docente: DocenteModel): Promise<DocenteModel> {
+  create(docente: DiscenteModel): Promise<DiscenteModel> {
     try {
       this.loadingService.showLoading();
 
-      return this.docentesService.create(docente).then((resp) => {
+      return this.discentesService.create(docente).then((resp) => {
         this.toastService.openSnackBar('Docente salvo correctamente');
         return resp;
       })
@@ -67,11 +67,11 @@ export class DocentesController {
     }
   }
 
-  update(docente: DocenteModel): Promise<DocenteModel> {
+  update(docente: DiscenteModel): Promise<DiscenteModel> {
     try {
       this.loadingService.showLoading();
 
-      return this.docentesService.update(docente).then((resp) => {
+      return this.discentesService.update(docente).then((resp) => {
         this.toastService.openSnackBar('Docente atualizado correctamente');
         return resp;
       }).catch((e) => this.requestResponseService.validateCatchError('Erro ao atualizar docente', e))
