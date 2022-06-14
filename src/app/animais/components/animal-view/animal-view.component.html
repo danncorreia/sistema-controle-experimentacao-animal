@@ -1,4 +1,4 @@
-<app-add-docente (updateList)="getDocentes()"></app-add-docente>
+<app-add-animal (updateList)="getAnimais()"></app-add-animal>
 
 <div class="content">
   <mat-form-field appearance="outline" class="search">
@@ -8,24 +8,19 @@
 
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
-    <ng-container matColumnDef="nome">
-      <th mat-header-cell *matHeaderCellDef> Nome </th>
-      <td mat-cell *matCellDef="let element"> {{element.nome}} </td>
+    <ng-container matColumnDef="especie">
+      <th mat-header-cell *matHeaderCellDef> Especie </th>
+      <td mat-cell *matCellDef="let element"> {{element.especie}} </td>
     </ng-container>
 
-    <ng-container matColumnDef="matricula">
-      <th mat-header-cell *matHeaderCellDef> Matricula </th>
-      <td mat-cell *matCellDef="let element"> {{element.matricula}} </td>
+    <ng-container matColumnDef="justificativa">
+      <th mat-header-cell *matHeaderCellDef> Justificativa </th>
+      <td mat-cell *matCellDef="let element"> {{element.justificativa}} </td>
     </ng-container>
 
-    <ng-container matColumnDef="nascimento">
-      <th mat-header-cell *matHeaderCellDef> Nascimento </th>
-      <td mat-cell *matCellDef="let element"> {{element.nascimento | date}} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="departamento">
-      <th mat-header-cell *matHeaderCellDef> Departamento </th>
-      <td mat-cell *matCellDef="let element"> {{element.departamento}} </td>
+    <ng-container matColumnDef="quantidade">
+      <th mat-header-cell *matHeaderCellDef> Quantidade </th>
+      <td mat-cell *matCellDef="let element"> {{element.quantidade}} </td>
     </ng-container>
 
     <ng-container matColumnDef="actions">
@@ -33,8 +28,8 @@
       <td mat-cell *matCellDef="let element" style="text-align: right;">
         <button mat-button [matMenuTriggerFor]="menu"> <mat-icon>settings</mat-icon> </button>
         <mat-menu #menu="matMenu">
-          <button mat-menu-item (click)="alterarDocente(element)">Alterar</button>
-          <button mat-menu-item (click)="excluirDocente(element.id)">Excluir</button>
+          <button mat-menu-item (click)="alterarBioterio(element)">Alterar</button>
+          <button mat-menu-item (click)="excluirBioterio(element.id)">Excluir</button>
         </mat-menu>
       </td>
     </ng-container>
@@ -43,11 +38,10 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 
     <!-- Row shown when there is no matching data. -->
-    <tr class="mat-row" *matNoDataRow>
+    <tr class="mat-row" *matNoDataRow >
       <td class="mat-cell" colspan="4" *ngIf="input.value.length > 0">Nenhum dado encontrado com o filtro "{{input.value}}"</td>
     </tr>
   </table>
 
   <mat-paginator [pageSizeOptions]="[10, 25, 100]" aria-label="Seleciona a página"></mat-paginator>
-
 </div>

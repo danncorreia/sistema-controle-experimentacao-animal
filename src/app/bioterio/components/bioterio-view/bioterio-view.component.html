@@ -1,4 +1,4 @@
-<app-add-docente (updateList)="getDocentes()"></app-add-docente>
+<app-add-bioterio (updateList)="getBioterios()"></app-add-bioterio>
 
 <div class="content">
   <mat-form-field appearance="outline" class="search">
@@ -13,19 +13,14 @@
       <td mat-cell *matCellDef="let element"> {{element.nome}} </td>
     </ng-container>
 
-    <ng-container matColumnDef="matricula">
-      <th mat-header-cell *matHeaderCellDef> Matricula </th>
-      <td mat-cell *matCellDef="let element"> {{element.matricula}} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="nascimento">
-      <th mat-header-cell *matHeaderCellDef> Nascimento </th>
-      <td mat-cell *matCellDef="let element"> {{element.nascimento | date}} </td>
-    </ng-container>
-
     <ng-container matColumnDef="departamento">
       <th mat-header-cell *matHeaderCellDef> Departamento </th>
       <td mat-cell *matCellDef="let element"> {{element.departamento}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="especies">
+      <th mat-header-cell *matHeaderCellDef> Especies </th>
+      <td mat-cell *matCellDef="let element"> {{element.departamento.toString()}} </td>
     </ng-container>
 
     <ng-container matColumnDef="actions">
@@ -33,8 +28,8 @@
       <td mat-cell *matCellDef="let element" style="text-align: right;">
         <button mat-button [matMenuTriggerFor]="menu"> <mat-icon>settings</mat-icon> </button>
         <mat-menu #menu="matMenu">
-          <button mat-menu-item (click)="alterarDocente(element)">Alterar</button>
-          <button mat-menu-item (click)="excluirDocente(element.id)">Excluir</button>
+          <button mat-menu-item (click)="alterarBioterio(element)">Alterar</button>
+          <button mat-menu-item (click)="excluirBioterio(element.id)">Excluir</button>
         </mat-menu>
       </td>
     </ng-container>
@@ -49,5 +44,4 @@
   </table>
 
   <mat-paginator [pageSizeOptions]="[10, 25, 100]" aria-label="Seleciona a página"></mat-paginator>
-
 </div>

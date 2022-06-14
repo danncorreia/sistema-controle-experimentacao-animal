@@ -1,11 +1,13 @@
-class Bioterio{
+export class BioterioModel{
+  id: number;
   nome: string;
   departamento: string;
-  especieis: string;
+  especies: string[];
 
-  constructor(nome: string, departamento: string, especieis: string){
+  constructor(id:number, nome: string, departamento: string, especies: string[]){
+    this.id = id;
     this.nome = nome;
     this.departamento = departamento;
-    this.especieis = especieis;
+    this.especies = especies;
   }
 }

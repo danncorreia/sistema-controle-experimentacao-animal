@@ -9,10 +9,9 @@ const routes: Routes = [
     {path: "discentes", data:{'routeName': 'Discentes'}, loadChildren: () => import('./discentes/discentes.module').then(m => m.DiscentesModule)},
     {path: "bioterio", data:{'routeName': 'Bioterio'}, loadChildren: () => import('./bioterio/bioterio.module').then(m => m.BioterioModule)},
     {path: "docentes", data:{'routeName': 'Docentes'}, loadChildren: () => import('./docentes/docentes.module').then(m => m.DocentesModule)},
-    {path: "protocolos", data:{'routeName': 'Protocolos'}, loadChildren: () => import('./protocolos/protocolos.module').then(m => m.ProtocolosModule)},
     {path: "", redirectTo: "docentes", pathMatch: "full"}
   ],
-  canActivate: [AuthGuard]
+  // canActivate: [AuthGuard]
   },
   {path: "auth", data:{'routeName': 'Auth'}, loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)},
 ];

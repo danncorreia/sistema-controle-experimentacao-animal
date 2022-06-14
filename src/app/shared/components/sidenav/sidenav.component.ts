@@ -15,12 +15,22 @@ export class SidenavComponent implements OnInit {
     {
       name: 'Docentes',
       path: '/docentes',
-      icon: 'person'
+      icon: 'school'
     },
     {
       name: 'Discentes',
       path: '/discentes',
       icon: 'person'
+    },
+    {
+      name: 'Bioterio',
+      path: '/bioterio',
+      icon: 'pets'
+    },
+    {
+      name: 'Animais',
+      path: '/animais',
+      icon: 'cruelty_free'
     }
   ]
 
