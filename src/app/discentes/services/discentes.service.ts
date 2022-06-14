@@ -8,7 +8,7 @@ import { DiscenteModel } from '../models/discente';
 })
 export class DiscentesService {
 
-  url:string = "http://localhost:3000/660/"
+  url:string = "http://localhost:3000/"
   authorization = window.localStorage.getItem('user') ? JSON.parse(window.localStorage.getItem('user') || '').accessToken : null;
   headers = new HttpHeaders()
   .append('accept', 'application/json')

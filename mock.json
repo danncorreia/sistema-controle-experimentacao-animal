@@ -8,7 +8,24 @@
       "departamento": "coordernação"
     }
   ],
-  "discentes": [],
+  "discentes": [
+    {
+      "id": "1111",
+      "nome": "teset1",
+      "matricula": "1111",
+      "nascimento": "Wed Jun 01 2022 00:00:00 GMT-0300 (Horário Padrão de Brasília)",
+      "curso": "tew"
+    }
+  ],
+  "bioterios": [
+    {
+      "id": 2,
+      "nome": "qwerqwer1",
+      "departamento": "qwerqwer",
+      "especies": "qwerqwerqer"
+    }
+  ],
+  "animais": [],
   "users": [
     {
       "email": "admin@email.com",

@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ListBioterioComponent } from './components/list-bioterio/list-bioterio.component';
+import { BioterioViewComponent } from './components/bioterio-view/bioterio-view.component';
 
 const routes: Routes = [
-  {path: "", component: ListBioterioComponent}
+  {path: "", component: BioterioViewComponent}
 ];
 
 @NgModule({
