@@ -12,11 +12,11 @@ export class AuthModel{
 }
 
 export class AuthLoginModel{
-  email: string;
-  password: string;
+  tipo: number;
+  nome: string;
 
-  constructor(email: string, password: string){
-    this.email = email;
-    this.password = password;
+  constructor(tipo: number, nome: string){
+    this.tipo = tipo;
+    this.nome = nome;
   }
 }

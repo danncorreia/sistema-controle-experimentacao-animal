@@ -5,13 +5,14 @@ import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition
 import { AuthModel, AuthLoginModel } from '../models/auth';
 import { AuthService } from '../services/auth.service';
 import { ToastService } from '../../shared/services/toast/toast.service';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthController {
 
-  constructor(private authService: AuthService, private loadingService:LoadingService, private toastService: ToastService) {}
+  constructor(private authService: AuthService, private loadingService:LoadingService, private toastService: ToastService, private router: Router) {}
 
   login(auth: AuthLoginModel): Promise<any> {
     try {
@@ -28,6 +29,15 @@ export class AuthController {
     } catch (error) {
       this.toastService.openSnackBar('Erro ao tentar fazer login!');
       return Promise.reject(error);
+    }
+  }
+
+  login_simples(auth: AuthLoginModel) {
+    try {
+      window.localStorage.setItem('user', JSON.stringify(auth));
+      this.router.navigate(['/']);
+    } catch (error) {
+      this.toastService.openSnackBar('Erro ao tentar fazer login!');
     }
   }
 }

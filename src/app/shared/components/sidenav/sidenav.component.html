@@ -6,7 +6,7 @@
   <hr>
   <ul class="nav nav-pills flex-column mb-auto">
     <li class="nav-item" *ngFor="let menu of menus" (click)="mudanomeRota(menu.name)">
-      <a [routerLink]="menu.path" class="nav-link" [ngClass]="{'active': router.url == menu.path}"
+      <a [routerLink]="menu.path" class="nav-link" [ngClass]="{'active': router.url == menu.path}" *ngIf="user.tipo >= menu.auth"
       [ngStyle]="{'background-color': router.url == menu.path ? 'white' : 'rgb(33, 37, 41)', 'color': router.url == menu.path ? 'rgb(33, 37, 41)' : 'white'}"
       aria-current="page">
         <mat-icon aria-hidden="false" aria-label="Example home icon">{{menu.icon}}</mat-icon>
@@ -16,7 +16,7 @@
   </ul>
   <hr>
   <div class="dropdown">
-    <a href="#" class="d-flex align-items-center text-white text-decoration-none "aria-expanded="false">
+    <a class="d-flex align-items-center text-white text-decoration-none sair"aria-expanded="false" (click)="sair()">
       <strong>Sair</strong>
     </a>
   </div>

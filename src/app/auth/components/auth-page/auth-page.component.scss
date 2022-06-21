@@ -4,9 +4,15 @@ div:first-child{
   align-items: center;
   flex-direction: column;
   height: 100%;
+  background-color: rgb(33, 37, 41);
+
+}
+
+body {
+
 }
 
 h1{
   margin-bottom: 4rem;
-  color: rgb(33, 37, 41);
+  color: white;
 }
