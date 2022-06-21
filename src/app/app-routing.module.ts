@@ -11,7 +11,7 @@ const routes: Routes = [
     {path: "docentes", data:{'routeName': 'Docentes'}, loadChildren: () => import('./docentes/docentes.module').then(m => m.DocentesModule)},
     {path: "", redirectTo: "docentes", pathMatch: "full"}
   ],
-  // canActivate: [AuthGuard]
+  canActivate: [AuthGuard]
   },
   {path: "auth", data:{'routeName': 'Auth'}, loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)},
 ];

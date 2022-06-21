@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-auth-page',
@@ -10,7 +11,11 @@ export class AuthPageComponent implements OnInit {
 
   loginForm: FormGroup;
 
-  constructor() { }
+  constructor(private router: Router) {
+    if(localStorage.getItem('user')){
+      this.router.navigate(['/']);
+    }
+   }
 
   ngOnInit(): void {
     this.loginForm = new FormGroup({
