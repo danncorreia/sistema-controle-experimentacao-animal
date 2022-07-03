@@ -14,7 +14,7 @@
 </div>
 <div mat-dialog-actions>
   <button mat-button (click)="onNoClick()">Cancelar</button>
-  <button mat-raised-button cdkFocusInitial color="warning" (click)="atualizar(true)">Excluir</button>
+  <button mat-raised-button cdkFocusInitial color="warning" *ngIf="!cadastro" (click)="atualizar(true)">Excluir</button>
   <button mat-raised-button cdkFocusInitial *ngIf="!cadastro" color="primary" (click)="atualizar()">Alterar</button>
   <button mat-raised-button cdkFocusInitial *ngIf="cadastro" color="primary" (click)="atualizar()">Salvar</button>
 </div>

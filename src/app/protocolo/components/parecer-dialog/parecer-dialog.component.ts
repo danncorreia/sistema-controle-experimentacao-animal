@@ -24,7 +24,7 @@ export class ParecerDialogComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.cadastro = this.data.parecer == null;
+    this.cadastro = this.data.parecer.parecer == null;
     this.form = new FormGroup({
       parecer: new FormControl(this.data.parecer.parecer,[Validators.required]),
       usoRecomendado: new FormControl(this.data.parecer.usoRecomendado,[Validators.required]),
