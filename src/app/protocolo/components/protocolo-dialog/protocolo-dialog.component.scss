@@ -1,0 +1,38 @@
+.body{
+  display: grid;
+}
+
+mat-form-field{
+  width: 100%;
+}
+
+.add-especies-label{
+  text-align: left;
+  width: 100%;
+}
+
+.especies{
+  display: flex;
+
+  mat-form-field:first-child{
+    margin-right: 5px;
+  }
+
+  div{
+    display: flex;
+    width: 50%;
+    mat-form-field{
+      width: 70%;
+    }
+    button{
+      width: 30%;
+      max-height: 4rem;
+    }
+
+  }
+}
+
+table{
+  width: 100%;
+  box-shadow: none;
+}

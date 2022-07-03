@@ -2,15 +2,15 @@
 <h1 mat-dialog-title *ngIf="data.id">Alterar Animal</h1>
 
 <div mat-dialog-content class="body" [formGroup]="form">
-  <mat-form-field appearance="fill">
+  <mat-form-field appearance="outline">
     <mat-label>especie</mat-label>
     <input formControlName="especie" matInput>
   </mat-form-field>
-  <mat-form-field appearance="fill">
+  <mat-form-field appearance="outline">
     <mat-label>quantidade</mat-label>
     <input formControlName="quantidade" type="number" matInput>
   </mat-form-field>
-  <mat-form-field appearance="fill">
+  <mat-form-field appearance="outline">
     <mat-label>justificativa</mat-label>
     <input formControlName="justificativa" matInput>
   </mat-form-field>

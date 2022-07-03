@@ -22,6 +22,8 @@ import ptBr from '@angular/common/locales/pt';
 import { HeaderComponent } from './components/header/header.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { DashboardViewComponent } from './components/dashboard-view/dashboard-view.component';
+import {MatSelectModule} from '@angular/material/select';
+
 registerLocaleData(ptBr)
 
 const modules: any = [
@@ -43,7 +45,8 @@ const modules: any = [
   ReactiveFormsModule,
   MatDatepickerModule,
   MatNativeDateModule,
-  MatCardModule
+  MatCardModule,
+  MatSelectModule
 ]
 
 const components: any = [

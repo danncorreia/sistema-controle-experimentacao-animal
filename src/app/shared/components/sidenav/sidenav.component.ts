@@ -38,6 +38,12 @@ export class SidenavComponent implements OnInit {
       path: '/animais',
       icon: 'cruelty_free',
       auth: 1
+    },
+    {
+      name: 'Protocolo',
+      path: '/protocolos',
+      icon: 'cruelty_free',
+      auth: 1
     }
   ]
 
