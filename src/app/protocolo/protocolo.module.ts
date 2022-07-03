@@ -6,6 +6,7 @@ import { ProcoloViewComponent } from './components/procolo-view/procolo-view.com
 import { AddProtocoloComponent } from './components/add-protocolo/add-protocolo.component';
 import { ProtocoloDialogComponent } from './components/protocolo-dialog/protocolo-dialog.component';
 import { SharedModule } from '../shared/shared.module';
+import { ParecerDialogComponent } from '../protocolo/components/parecer-dialog/parecer-dialog.component';
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import { SharedModule } from '../shared/shared.module';
   declarations: [
     AddProtocoloComponent,
     ProtocoloDialogComponent,
-    ProcoloViewComponent
+    ProcoloViewComponent,
+    ParecerDialogComponent
   ]
 })
 export class ProtocoloModule { }

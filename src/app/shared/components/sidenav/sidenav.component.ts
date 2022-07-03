@@ -42,7 +42,7 @@ export class SidenavComponent implements OnInit {
     {
       name: 'Protocolo',
       path: '/protocolos',
-      icon: 'cruelty_free',
+      icon: 'inbox',
       auth: 1
     }
   ]

@@ -12,7 +12,6 @@ import { ToastService } from '../../../shared/services/toast/toast.service';
 })
 export class DiscenteDialogComponent implements OnInit {
 
-
   form: FormGroup;
 
   constructor(

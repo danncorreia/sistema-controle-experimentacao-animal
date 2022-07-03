@@ -1,0 +1,20 @@
+<h1 mat-dialog-title *ngIf="cadastro">Cadastrar Parecer</h1>
+<h1 mat-dialog-title *ngIf="!cadastro">Alterar Parecer</h1>
+
+<div mat-dialog-content class="body" [formGroup]="form">
+  <mat-form-field appearance="outline">
+    <mat-label>Parecer</mat-label>
+    <textarea rows="10" matInput formControlName="parecer"></textarea>
+  </mat-form-field>
+
+  <mat-radio-group formControlName="usoRecomendado">
+    <mat-radio-button [value]="1">Uso Recomendado</mat-radio-button>
+    <mat-radio-button [value]="2">Uso Não Recomendado</mat-radio-button>
+  </mat-radio-group>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancelar</button>
+  <button mat-raised-button cdkFocusInitial color="warning" (click)="atualizar(true)">Excluir</button>
+  <button mat-raised-button cdkFocusInitial *ngIf="!cadastro" color="primary" (click)="atualizar()">Alterar</button>
+  <button mat-raised-button cdkFocusInitial *ngIf="cadastro" color="primary" (click)="atualizar()">Salvar</button>
+</div>
