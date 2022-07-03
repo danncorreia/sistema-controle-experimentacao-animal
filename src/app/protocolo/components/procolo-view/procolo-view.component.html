@@ -41,6 +41,7 @@
       <td mat-cell *matCellDef="let element" style="text-align: right;">
         <button mat-button [matMenuTriggerFor]="menu"> <mat-icon>settings</mat-icon> </button>
         <mat-menu #menu="matMenu">
+          <button mat-menu-item (click)="parecer(element)" *ngIf="user.tipo >= 2">{{!element.parecer? "Cadastrar Parecer": "Alterar Parecer"}}</button>
           <button mat-menu-item (click)="alterar(element)">Alterar</button>
           <button mat-menu-item (click)="excluir(element.id)">Excluir</button>
         </mat-menu>
@@ -94,7 +95,7 @@
             </mat-form-field>
 
             <span class="add-especies-label">Especies:</span>
-            <table mat-table [dataSource]="createDataSource(element.especies)" class="mat-elevation-z8">
+            <table mat-table [dataSource]="createDataSource(element.especies)" class="mat-elevation-z8" style="margin: 10px 0;">
 
               <ng-container matColumnDef="especie">
                 <th mat-header-cell *matHeaderCellDef> Especie </th>
@@ -109,6 +110,16 @@
               <tr mat-header-row *matHeaderRowDef="displayedColumnsEspecies"></tr>
               <tr mat-row *matRowDef="let row; columns: displayedColumnsEspecies;"></tr>
             </table>
+
+            <mat-form-field class="example-full-width" appearance="outline" *ngIf="element.parecer">
+              <mat-label>Parecer</mat-label>
+              <textarea matInput [value]="element.parecer.parecer" [readonly]="true"></textarea>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" *ngIf="element.parecer">
+              <mat-label>Recomendação</mat-label>
+              <input matInput [value]="element.parecer.usoRecomendado == 1? 'Uso Recomendado': 'Uso Não Recomendado'" [readonly]="true">
+            </mat-form-field>
         </div>
       </td>
     </ng-container>

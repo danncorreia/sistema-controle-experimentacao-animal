@@ -6,6 +6,9 @@ import { ProtocoloModel } from '../../models/protocolo';
 import { MatTableDataSource } from '@angular/material/table';
 import { ProtocoloDialogComponent } from '../protocolo-dialog/protocolo-dialog.component';
 import { animate, state, style, transition, trigger } from '@angular/animations';
+import { ParecerDialogComponent } from '../../../protocolo/components/parecer-dialog/parecer-dialog.component';
+import { ParecerModel } from '../../models/parecer';
+import { AuthLoginModel } from '../../../auth/models/auth';
 
 @Component({
   selector: 'app-procolo-view',
@@ -25,8 +28,11 @@ export class ProcoloViewComponent implements OnInit {
 
   protocolo: ProtocoloModel[] = [];
   dataSource = new MatTableDataSource(this.protocolo);
+  user: AuthLoginModel;
 
-  constructor(public controller: ProtocoloController, public dialog: MatDialog) { }
+  constructor(public controller: ProtocoloController, public dialog: MatDialog) {
+    this.user = JSON.parse(localStorage.getItem('user') || "");
+  }
 
   ngOnInit(): void {
     this.get();
@@ -58,9 +64,9 @@ export class ProcoloViewComponent implements OnInit {
     });
   }
 
-  alterar(animal: ProtocoloModel){
+  alterar(protocolo: ProtocoloModel){
     const dialogRef = this.dialog.open(ProtocoloDialogComponent, {
-      data: animal
+      data: protocolo
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -70,5 +76,19 @@ export class ProcoloViewComponent implements OnInit {
 
   createDataSource(array:any[]) {
     return new MatTableDataSource(array);
+  }
+
+  parecer(protocolo: ProtocoloModel){
+    if(!protocolo.parecer) {
+      protocolo.parecer = new ParecerModel(null, 1);
+    }
+
+    const dialogRef = this.dialog.open(ParecerDialogComponent, {
+      data: protocolo
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.get();
+    });
   }
 }

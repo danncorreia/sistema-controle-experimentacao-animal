@@ -1,4 +1,5 @@
 import { BioterioModel } from '../../bioterio/models/bioterio';
+import { ParecerModel } from './parecer';
 export class ProtocoloModel{
   id: number;
   matricula: number;
@@ -8,7 +9,8 @@ export class ProtocoloModel{
   dataPrevInicio: Date | null;
   dataPrevTermino: Date | null;
   especies: {qtd: number, especie: string}[];
-  bioterio: BioterioModel | null
+  bioterio: BioterioModel | null;
+  parecer: ParecerModel | null;
 
   constructor(id: number, matricula: number, justificativa: string, resumoPt: string, resumoEng: string, dataPrevInicio: Date | null, dataPrevTermino: Date | null, especies: {qtd: number, especie: string}[], bioterio: BioterioModel | null){
     this.id = id;
