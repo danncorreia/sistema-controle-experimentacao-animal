@@ -26,6 +26,50 @@
     }
   ],
   "animais": [],
+  "protocolos": [
+    {
+      "id": 1,
+      "matricula": "2134231",
+      "justificativa": "adsfasdf",
+      "resumoPt": "asdfsadf",
+      "resumoEng": "asdfasdf",
+      "dataPrevInicio": "2022-07-04T03:00:00.000Z",
+      "dataPrevTermino": "2022-07-26T03:00:00.000Z",
+      "especies": [
+        {
+          "especie": "asdfasdf",
+          "qtd": 1
+        }
+      ],
+      "bioterio": {
+        "id": 2,
+        "nome": "qwerqwer1",
+        "departamento": "qwerqwer",
+        "especies": "qwerqwerqer"
+      }
+    },
+    {
+      "id": 2,
+      "matricula": "13241234",
+      "justificativa": "adsfasdf",
+      "resumoPt": "adsfasdf",
+      "resumoEng": "sadfasdf",
+      "dataPrevInicio": "2022-07-04T03:00:00.000Z",
+      "dataPrevTermino": "2022-07-22T03:00:00.000Z",
+      "especies": [
+        {
+          "especie": "asdfasdf",
+          "qtd": 1
+        }
+      ],
+      "bioterio": {
+        "id": 2,
+        "nome": "qwerqwer1",
+        "departamento": "qwerqwer",
+        "especies": "qwerqwerqer"
+      }
+    }
+  ],
   "users": [
     {
       "email": "admin@email.com",
