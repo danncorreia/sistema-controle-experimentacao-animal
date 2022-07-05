@@ -37,8 +37,8 @@
       "dataPrevTermino": "2022-07-26T03:00:00.000Z",
       "especies": [
         {
-          "especie": "asdfasdf",
-          "qtd": 1
+          "especie": "fon``",
+          "qtd": 2
         }
       ],
       "bioterio": {
@@ -46,8 +46,7 @@
         "nome": "qwerqwer1",
         "departamento": "qwerqwer",
         "especies": "qwerqwerqer"
-      },
-      "parecer": null
+      }
     },
     {
       "id": 2,
@@ -68,7 +67,8 @@
         "nome": "qwerqwer1",
         "departamento": "qwerqwer",
         "especies": "qwerqwerqer"
-      }
+      },
+      "parecer": null
     }
   ],
   "users": [

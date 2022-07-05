@@ -28,7 +28,7 @@
 
   <mat-form-field appearance="outline">
     <mat-label>Bioterio</mat-label>
-    <mat-select formControlName="bioterio">
+    <mat-select formControlName="bioterio" [compareWith]="compareObjects">
       <mat-option *ngFor="let bioterio of bioterios" [value]="bioterio">
         {{bioterio.nome}}
       </mat-option>
