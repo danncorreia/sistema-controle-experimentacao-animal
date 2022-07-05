@@ -6,6 +6,7 @@ import { ProtocoloModel } from '../../models/protocolo';
 import { ProtocoloController } from '../../controllers/protocolo.controller';
 import { BioterioController } from '../../../bioterio/controllers/bioterio.controller';
 import { BioterioModel } from '../../../bioterio/models/bioterio';
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'app-protocolo-dialog',
@@ -15,7 +16,7 @@ import { BioterioModel } from '../../../bioterio/models/bioterio';
 export class ProtocoloDialogComponent implements OnInit {
 
   displayedColumns: string[] = ['especie', 'qtd', 'del'];
-  dataSource:any;
+  dataSource:MatTableDataSource<any>;
   form: FormGroup;
   formEspecies: FormGroup;
   bioterios: BioterioModel[];
@@ -31,6 +32,7 @@ export class ProtocoloDialogComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    console.log(this.data)
     this.form = new FormGroup({
       id: new FormControl(this.data.id),
       matricula: new FormControl(this.data.matricula, [Validators.required]),
@@ -38,12 +40,12 @@ export class ProtocoloDialogComponent implements OnInit {
       resumoPt: new FormControl(this.data.resumoPt, [Validators.required]),
       resumoEng: new FormControl(this.data.resumoEng, [Validators.required]),
       dataPrevInicio: new FormControl(this.data.dataPrevInicio, [Validators.required]),
-      dataPrevTermino: new FormControl(this.data.dataPrevTermino, [Validators.required, this.dataMaiorQueAtual]),
+      dataPrevTermino: new FormControl(this.data.dataPrevTermino, [Validators.required]),
       especies: new FormControl(this.data.especies, [Validators.required]),
       bioterio: new FormControl(this.data.bioterio, [Validators.required])
     });
 
-    this.dataSource = this.data.especies;
+    this.dataSource = new MatTableDataSource(this.form.get('especies').value);
 
     this.formEspecies = new FormGroup({
       especie: new FormControl(),
@@ -63,10 +65,11 @@ export class ProtocoloDialogComponent implements OnInit {
   }
 
   removeEspecie(index: number){
+    console.log(index)
     let especies = this.form.get('especies').value;
     especies.splice(index, 1);
     this.form.get('especies').setValue(especies);
-    this.dataSource = especies;
+    this.dataSource = this.form.get('especies').value;
   }
 
   cadastrar(){
@@ -82,6 +85,7 @@ export class ProtocoloDialogComponent implements OnInit {
 
   atualizar(){
     if(this.form.invalid){
+      console.log(this.form)
       this.toastService.openSnackBar('Preencha todos os campos corretamente')
     }else{
       this.controller.update(this.form.value).then(() => {
@@ -98,9 +102,11 @@ export class ProtocoloDialogComponent implements OnInit {
     }
   }
 
-  getBioterios(){
-    this.bioterioController.get().then(resp => {
-      this.bioterios = resp;
-    })
+  async getBioterios(){
+    this.bioterios = await this.bioterioController.get();
+  }
+
+  compareObjects(a: any, b:any):boolean {
+    return a.id === b.id;
   }
 }
