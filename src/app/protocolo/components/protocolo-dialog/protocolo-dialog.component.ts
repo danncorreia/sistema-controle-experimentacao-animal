@@ -32,7 +32,6 @@ export class ProtocoloDialogComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.data)
     this.form = new FormGroup({
       id: new FormControl(this.data.id),
       matricula: new FormControl(this.data.matricula, [Validators.required]),
@@ -60,21 +59,19 @@ export class ProtocoloDialogComponent implements OnInit {
   addEspecie(){
     const especie = this.formEspecies.value;
     this.form.get('especies')?.setValue([...this.form.get('especies').value, especie]);
-    this.dataSource = this.form.get('especies').value;
+    this.dataSource = new MatTableDataSource(this.form.get('especies').value);
     this.formEspecies.reset();
   }
 
   removeEspecie(index: number){
-    console.log(index)
     let especies = this.form.get('especies').value;
     especies.splice(index, 1);
     this.form.get('especies').setValue(especies);
-    this.dataSource = this.form.get('especies').value;
+    this.dataSource = new MatTableDataSource(this.form.get('especies').value);
   }
 
   cadastrar(){
     if(this.form.invalid){
-      console.log(this.form.value)
       this.toastService.openSnackBar('Preencha todos os campos corretamente')
     }else{
       this.controller.create(this.form.value).then(() => {
@@ -85,7 +82,6 @@ export class ProtocoloDialogComponent implements OnInit {
 
   atualizar(){
     if(this.form.invalid){
-      console.log(this.form)
       this.toastService.openSnackBar('Preencha todos os campos corretamente')
     }else{
       this.controller.update(this.form.value).then(() => {
