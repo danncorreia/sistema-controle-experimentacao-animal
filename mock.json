@@ -1,76 +1,9 @@
 {
-  "docentes": [
-    {
-      "id": 123,
-      "nome": "daniel",
-      "matricula": 123,
-      "nascimento": "Fri May 06 2022 00:00:00 GMT-0300 (Horário Padrão de Brasília)",
-      "departamento": "coordernação"
-    }
-  ],
-  "discentes": [
-    {
-      "id": "1111",
-      "nome": "teset1",
-      "matricula": "1111",
-      "nascimento": "Wed Jun 01 2022 00:00:00 GMT-0300 (Horário Padrão de Brasília)",
-      "curso": "tew"
-    }
-  ],
-  "bioterios": [
-    {
-      "id": 2,
-      "nome": "qwerqwer1",
-      "departamento": "qwerqwer",
-      "especies": "qwerqwerqer"
-    }
-  ],
+  "docentes": [],
+  "discentes": [],
+  "bioterios": [],
   "animais": [],
-  "protocolos": [
-    {
-      "id": 1,
-      "matricula": "2134231",
-      "justificativa": "adsfasdf",
-      "resumoPt": "asdfsadf",
-      "resumoEng": "asdfasdf",
-      "dataPrevInicio": "2022-07-04T03:00:00.000Z",
-      "dataPrevTermino": "2022-07-26T03:00:00.000Z",
-      "especies": [
-        {
-          "especie": "fon``",
-          "qtd": 2
-        }
-      ],
-      "bioterio": {
-        "id": 2,
-        "nome": "qwerqwer1",
-        "departamento": "qwerqwer",
-        "especies": "qwerqwerqer"
-      }
-    },
-    {
-      "id": 2,
-      "matricula": "13241234",
-      "justificativa": "adsfasdf",
-      "resumoPt": "adsfasdf",
-      "resumoEng": "sadfasdf",
-      "dataPrevInicio": "2022-07-04T03:00:00.000Z",
-      "dataPrevTermino": "2022-07-22T03:00:00.000Z",
-      "especies": [
-        {
-          "especie": "asdfasdf",
-          "qtd": 1
-        }
-      ],
-      "bioterio": {
-        "id": 2,
-        "nome": "qwerqwer1",
-        "departamento": "qwerqwer",
-        "especies": "qwerqwerqer"
-      },
-      "parecer": null
-    }
-  ],
+  "protocolos": [],
   "users": [
     {
       "email": "admin@email.com",

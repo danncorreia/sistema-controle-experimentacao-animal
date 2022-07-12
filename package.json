@@ -1,6 +1,6 @@
 {
   "name": "sistema-controle-experimentacao-animal",
-  "version": "0.0.0",
+  "version": "1.0.1",
   "scripts": {
     "ng": "ng",
     "start": "concurrently \"ng serve\" \"json-server-auth --watch mock.json\"",
